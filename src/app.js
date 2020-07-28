@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#app',
     data: {
-      allCountries: []
+      allCountries: [],
+      selectedCountry: null
     },
 
     computed: {
@@ -26,7 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         calculatePopulation: function(allCountries) {
             return allCountries.reduce((total, country) => total + country.population, 0);
-          }    
+        },
+
+        countryDetails: function(event) {
+           this.selectedCountry = event.target;
+           console.log(this.selectedCountry);
+           
+        }
     }
   })
 })

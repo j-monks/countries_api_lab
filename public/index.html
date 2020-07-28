@@ -11,7 +11,11 @@
   <div id="app">
     <h1>Total Population of All Countries</h1>
     <p>{{ totalPopulation }}</p>
-  
+    
+
+    <select name="country" id="country" @change="countryDetails">
+        <option v-for="country in allCountries" v-bind:value="country" >{{ country.name }}</option>
+    </select>
   </div>
 
 </body>
